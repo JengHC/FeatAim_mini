@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-	public static Action OnTargetMissed;
+	public static Action OnTargetMiss;
 
 	[SerializeField] Camera cam;
 
@@ -27,12 +27,12 @@ public class Gun : MonoBehaviour
 				}
 				else
 				{
-					OnTargetMissed?.Invoke();
+                    OnTargetMiss?.Invoke();
 				}
 			}
 			else
 			{
-				OnTargetMissed?.Invoke();
+                OnTargetMiss?.Invoke();
 			}
 		}
 	}

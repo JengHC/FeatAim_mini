@@ -6,7 +6,11 @@ using UnityEngine;
 public class ScoreCounter : MonoBehaviour
 {
 	[SerializeField] TMP_Text text;
-	public static int Score { get; private set; }
+	public static int Score 
+	{ 
+		get;
+		private set; 
+	}
 
 	void OnEnable()
 	{
@@ -21,6 +25,6 @@ public class ScoreCounter : MonoBehaviour
 	void OnTargetHit()
 	{
 		Score++;
-		text.text = $"Score: {Score}";
+		text.text = $"{Score}";
 	}
 }

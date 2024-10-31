@@ -6,14 +6,18 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-	public static Action OnGameEnded;
-	public static bool GameEnded { get; private set; }
+	public static Action OnGameEnded;	// 게임 종료시 발생하는 이벤트를 델리게이트로 정의
+	public static bool GameEnded 
+	{ 
+		get; 
+		private set; 
+	}	// 게임이 종료 되었는지 확인하는 프로퍼티, 내부에서만 값 설정
 
 	[SerializeField] TMP_Text timerText;
 
 	float endTime;
 
-	const float gameTime = 10f;
+	const float gameTime = 60.0f;
 
 	void Start()
 	{
@@ -36,6 +40,6 @@ public class Timer : MonoBehaviour
 			timeLeft = 0;
 		}
 
-		timerText.text = $"Time Left: {timeLeft.ToString("0.0")}";
+		timerText.text = $"{timeLeft.ToString("0.00")}";
 	}
 }

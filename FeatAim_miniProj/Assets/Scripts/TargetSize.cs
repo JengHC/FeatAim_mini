@@ -3,8 +3,11 @@ using UnityEngine;
 public class TargetSize : MonoBehaviour
 {
 
-    [SerializeField] private Vector3 sizeRate = new Vector3(0.02f, 0.02f, 0.02f); // 매 초마다 줄어드는 비율
-    [SerializeField] private Vector3 minScale = new Vector3(0.5f, 0.5f, 0.5f); // 최소 크기
+    [SerializeField] 
+    Vector3 sizeRate = new Vector3(0.02f, 0.02f, 0.02f); // 매 초마다 줄어드는 비율
+
+    [SerializeField] 
+    Vector3 minScale = new Vector3(0.5f, 0.5f, 0.5f); // 최소 크기
    
     void Update()
     {

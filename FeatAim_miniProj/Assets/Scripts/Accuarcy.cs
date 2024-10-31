@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Accuarcy : MonoBehaviour
 {
-    [SerializeField] TMP_Text accuracyText;
+    [SerializeField] 
+    TMP_Text accuracyText;
 
     void OnEnable()
     {
@@ -17,7 +18,7 @@ public class Accuarcy : MonoBehaviour
 
     void CalculateAccuracy()
     {
-        float accuracy = (float)ScoreCounter.Score / (float)(ScoreCounter.Score + MissCounter.Misses);
+        float accuracy = (float)ScoreCounter.Score / (float)(ScoreCounter.Score + MissCounter.Miss);
         accuracy *= 100f;
         accuracyText.text = $"Á¤È®µµ: {accuracy.ToString("0")}%";
     }

@@ -6,21 +6,24 @@ using UnityEngine;
 public class MissCounter : MonoBehaviour
 {
 	[SerializeField] TMP_Text text;
-	public static int Misses { get; private set; }
-
-	void OnEnable()
+	public static int Miss
 	{
-		Gun.OnTargetMissed += OnTargetMissed;
+		get;
+		private set;
 	}
 
-	void OnDisable()
-	{
-		Gun.OnTargetMissed -= OnTargetMissed;
-	}
+    private void OnEnable()
+    {
+		Gun.OnTargetMiss += OnTargetMiss;
+    }
+    private void OnDisable()
+    {
+        Gun.OnTargetMiss -= OnTargetMiss;
+    }
 
-	void OnTargetMissed()
-	{
-		Misses++;
-		text.text = $"Misses: {Misses}";
-	}
+    void OnTargetMiss()
+    {
+        Miss++;
+        text.text = $"Miss:{Miss}";
+    }
 }
