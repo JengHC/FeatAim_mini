@@ -6,6 +6,7 @@ using UnityEngine;
 public class MissCounter : MonoBehaviour
 {
 	[SerializeField] TMP_Text text;
+
 	public static int Miss
 	{
 		get;

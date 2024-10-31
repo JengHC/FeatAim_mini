@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Timer : MonoBehaviour
 
 	float endTime;
 
-	const float gameTime = 60.0f;
+	const float gameTime = 20.0f;
 
 	void Start()
 	{
@@ -42,4 +43,5 @@ public class Timer : MonoBehaviour
 
 		timerText.text = $"{timeLeft.ToString("0.00")}";
 	}
+	
 }
