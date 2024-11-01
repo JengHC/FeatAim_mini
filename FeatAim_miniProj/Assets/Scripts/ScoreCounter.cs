@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
 {
-	[SerializeField] TMP_Text text;
+	//[SerializeField] TMP_Text text;
 	public static int Score 
 	{ 
 		get;
@@ -33,7 +33,7 @@ public class ScoreCounter : MonoBehaviour
 		lastHitTime = Time.time;
 
 		Score++;
-		text.text = $"{Score}";
+		//text.text = $"{Score}";
 	}
 
 	//void OnGameEnded()
