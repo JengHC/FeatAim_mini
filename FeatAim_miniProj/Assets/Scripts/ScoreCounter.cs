@@ -12,13 +12,13 @@ public class ScoreCounter : MonoBehaviour
 		private set; 
 	}
 
-	public float lastHitTime;
+	//public float lastHitTime;
 
 	void OnEnable()
 	{		
 		Target.OnTargetHit += OnTargetHit;
 		//Timer.OnGameEnded += OnGameEnded;
-		lastHitTime = Time.time;
+		//lastHitTime = Time.time;
 	}
 
 	void OnDisable()
@@ -30,7 +30,7 @@ public class ScoreCounter : MonoBehaviour
 	void OnTargetHit()
 	{
 		// 다음 공을 맞췄을때 걸린 시간을 새로 계산 하도록, 현재 시간으로 다시 설정
-		lastHitTime = Time.time;
+		//lastHitTime = Time.time;
 
 		Score++;
 		//text.text = $"{Score}";

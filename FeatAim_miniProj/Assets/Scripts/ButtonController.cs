@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour
 {
-	public void Restart()
+    [SerializeField]
+    GameObject rankingPopup;
+
+    public void Restart()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
@@ -13,5 +16,9 @@ public class ButtonController : MonoBehaviour
     public void OnApplicationQuit()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void RankingButton()
+    {
+        rankingPopup.SetActive(true);
     }
 }
