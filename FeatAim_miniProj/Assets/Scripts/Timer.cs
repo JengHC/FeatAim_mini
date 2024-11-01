@@ -34,8 +34,9 @@ public class Timer : MonoBehaviour
 		float timeLeft = endTime - Time.time;
 
 		if(timeLeft <= 0)
-		{
-			GameEnded = true;
+        {
+            // OnGameEnded = null이 아닐때 Invoke()호출 
+            GameEnded = true;
 			OnGameEnded?.Invoke();
 
 			timeLeft = 0;

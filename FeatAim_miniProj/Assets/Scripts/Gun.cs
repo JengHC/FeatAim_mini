@@ -27,6 +27,7 @@ public class Gun : MonoBehaviour
 				}
 				else
 				{
+					// OnTargetMiss = null이 아닐때 Invoke()호출 
                     OnTargetMiss?.Invoke();
 				}
 			}

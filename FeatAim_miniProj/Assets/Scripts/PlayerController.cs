@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float mouseSens = 0.2f;
 
+    [SerializeField]
+    LayerMask targetLayerMask;
+
     float verticalAngle;
 
     void Start()

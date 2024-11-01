@@ -15,7 +15,7 @@ public class Target : MonoBehaviour
 	public void Hit()
 	{
 		RandomizePosition();
-		OnTargetHit?.Invoke();
+		OnTargetHit?.Invoke();	// OnTargetHit = null 이 아닐때, Invoke()호출
 	}
 
 	void RandomizePosition()
