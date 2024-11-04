@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MissCounter : MonoBehaviour
 {
-    //[SerializeField] TMP_Text text;
+    [SerializeField] TMP_Text text;
     public static int Miss
 	{
 		get;
@@ -28,6 +28,6 @@ public class MissCounter : MonoBehaviour
     {
         Miss++;
         accuarcyScript.CalculateAccuracy(); // 정확도 메서드 호출
-        //text.text = $"Miss: {Miss}";
+        text.text = $"Miss: {Miss}";
     }
 }
