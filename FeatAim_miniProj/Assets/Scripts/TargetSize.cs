@@ -4,10 +4,10 @@ public class TargetSize : MonoBehaviour
 {
 
     [SerializeField] 
-    Vector3 sizeRate = new Vector3(0.02f, 0.02f, 0.02f); // 매 초마다 줄어드는 비율
+    Vector3 sizeRate = new Vector3(0.005f, 0.005f, 0.005f); // 매 초마다 줄어드는 비율
 
     [SerializeField] 
-    Vector3 minScale = new Vector3(0.5f, 0.5f, 0.5f); // 최소 크기
+    Vector3 minScale = new Vector3(0.3f, 0.3f, 0.3f); // 최소 크기
    
     void Update()
     {

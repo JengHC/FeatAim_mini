@@ -12,13 +12,15 @@ public class Timer : MonoBehaviour
 	{ 
 		get; 
 		private set; 
-	}	// 게임이 종료 되었는지 확인하는 프로퍼티, 내부에서만 값 설정
+	}   // 게임이 종료 되었는지 확인하는 프로퍼티, 내부에서만 값 설정
 
-	[SerializeField] TMP_Text timerText;
+    private bool isGameActive = false;
+
+    [SerializeField] TMP_Text timerText;
 
 	float endTime;
 
-	const float gameTime = 20.0f;
+	const float gameTime = 3.0f;
 
 	void Start()
 	{
@@ -28,7 +30,17 @@ public class Timer : MonoBehaviour
 
 	void Update()
 	{
-		if(GameEnded)
+        if (!isGameActive)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                isGameActive = true;
+                endTime = Time.time + gameTime; // Reset endTime when starting the game
+            }
+            return;
+        }
+
+        if (GameEnded)
 			return;
 
 		float timeLeft = endTime - Time.time;

@@ -28,6 +28,6 @@ public class MissCounter : MonoBehaviour
     {
         Miss++;
         accuarcyScript.CalculateAccuracy(); // 정확도 메서드 호출
-        text.text = $"Miss: {Miss}";
+        text.text = $"Miss: {Miss}회";
     }
 }

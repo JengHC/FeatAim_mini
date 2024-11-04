@@ -3,16 +3,26 @@ using UnityEngine;
 
 public class ScoreTotal : MonoBehaviour
 {
-    [SerializeField] TMP_Text text;
+    [SerializeField] 
+    TMP_Text text;
+    [SerializeField] 
+    TMP_Text text1;
+    private bool isGameActive = false;
 
-    [SerializeField] TMP_Text text1;
     public static int Score
     {
         get;
         private set;
     }
-
     public float lastHitTime;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            isGameActive = true;
+        }
+    }
 
     void OnEnable()
     {
@@ -29,6 +39,9 @@ public class ScoreTotal : MonoBehaviour
 
     void OnTargetHit()
     {
+        if (!isGameActive)
+            return;
+
         // 공을 맞춘 현재 시간과 마지막 공을 맞춘 시간의 차이 계산
         float timeSinceLastHit = Time.time - lastHitTime;
 
@@ -59,6 +72,18 @@ public class ScoreTotal : MonoBehaviour
 
         Score++;
         text1.text = $"점수: {Score}";
+    }
+
+    public static  void ResetScore()
+    {
+        Score = 0;
+        ScoreTotal instance = FindObjectOfType<ScoreTotal>();
+
+        if (instance != null)
+        {
+            instance.text.text = $"{Score}";
+            instance.text1.text = $"점수: {Score}";
+        }
     }
 
     //void OnGameEnded()

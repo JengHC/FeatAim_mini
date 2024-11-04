@@ -6,16 +6,26 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
 	public static Action OnTargetMiss;
+    private bool isGameActive = false;
 
-	[SerializeField] Camera cam;
+    [SerializeField] Camera cam;
 
 	void Update()
 	{
-		if(Timer.GameEnded)
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            isGameActive = true;
+        }
+
+        if (Timer.GameEnded)
 			return;
 
 		if(Input.GetMouseButtonDown(0))
 		{
+			if(!isGameActive)
+			{
+				return;
+			}
 			Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 			if(Physics.Raycast(ray, out RaycastHit hit))
 			{

@@ -8,15 +8,22 @@ public class ButtonController : MonoBehaviour
     [SerializeField]
     GameObject rankingPopup;
 
+    public void startGame()
+    {
+        SceneManager.LoadScene("basic");
+    }
+
     public void Restart()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ScoreTotal.ResetScore();
+        SceneManager.LoadScene("basic");
 	}
 
     public void OnApplicationQuit()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Main");
     }
+
     public void RankingButton()
     {
         rankingPopup.SetActive(true);
