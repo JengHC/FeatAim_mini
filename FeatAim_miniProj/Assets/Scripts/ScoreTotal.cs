@@ -4,6 +4,8 @@ using UnityEngine;
 public class ScoreTotal : MonoBehaviour
 {
     [SerializeField] TMP_Text text;
+
+    [SerializeField] TMP_Text text1;
     public static int Score
     {
         get;
@@ -35,15 +37,15 @@ public class ScoreTotal : MonoBehaviour
         float multiple = 1.0f;  //그냥 곱하고 하면 보기 싫으니까, 가독성 좋게 Mathf사용하기 위함
 
         // timeSinceLasthit이 1초 이하이면 multiple이 2배가 됨
-        if (timeSinceLastHit <= 1.0f)
+        if (timeSinceLastHit <= 0.7f)
         {
             multiple = 2.0f;
         }
-        else if (timeSinceLastHit <= 3.0f)
+        else if (timeSinceLastHit <= 0.5f)
         {
             multiple = 1.5f;
         }
-        else if (timeSinceLastHit <= 5.0f)
+        else if (timeSinceLastHit <= 0.2f)
         {
             multiple = 1.2f;
         }
@@ -56,12 +58,12 @@ public class ScoreTotal : MonoBehaviour
         lastHitTime = Time.time;
 
         Score++;
-        text.text = $"{Score}";
+        text1.text = $"점수: {Score}";
     }
 
     //void OnGameEnded()
     //{
-    //	Score = 0;
-    //	text.text = $"{Score}";
+    //    Score = 0;
+    //    text1.text = $"{Score}";
     //}
 }

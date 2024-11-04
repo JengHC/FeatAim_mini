@@ -6,42 +6,42 @@ public class Accuarcy : MonoBehaviour
 
     [SerializeField] 
     TMP_Text accuracyText;
+    [SerializeField]
+    TMP_Text accuracyPanelText;
+    [SerializeField]
+    GameObject accuracyPanel; // 정확도를 표시할 패널
 
     private void Start()
     {
         accuracyText.text = "100%";
+        accuracyPanelText.text = "100%";
+        accuracyPanel.SetActive(false);
+
     }
 
     void OnEnable()
     {
         Timer.OnGameEnded += CalculateAccuracy;
+        Timer.OnGameEnded += ShowAccuracyPanelText;
     }
 
     void OnDisable()
     {
         Timer.OnGameEnded -= CalculateAccuracy;
+        Timer.OnGameEnded -= ShowAccuracyPanelText;
+    }
+
+    public void ShowAccuracyPanelText()
+    {
+        CalculateAccuracy(); // 정확도 계산
+        accuracyPanel.SetActive(true); // 패널 활성화
     }
 
     public void CalculateAccuracy()
     {
-        // 총 점수와 미스의 정보를 알기 위해 설정 
-        //float totalScore = (float)ScoreCounter.Score;
-        //float totalMiss = (float)MissCounter.Miss;
-
-        //// 정확도 = (총 점수 / (총 점수 + 미스)) * 100
-        //// 미스가 없을 때는 100으로 설정
-        //float accuracy;
-        //if(totalScore + totalMiss > 0)
-        //{
-        //    accuracy = (totalScore / (totalScore + totalMiss)) * 100f;
-        //}
-        //else
-        //{
-        //    accuracy = 100f;
-        //}
-
         float accuracy = (float)ScoreCounter.Score / (float)(ScoreCounter.Score + MissCounter.Miss);
         accuracy *= 100f;
         accuracyText.text = $"{accuracy.ToString("0")}%";
+        accuracyPanelText.text = $"정확도: {accuracy.ToString("0")}%";
     }
 }
