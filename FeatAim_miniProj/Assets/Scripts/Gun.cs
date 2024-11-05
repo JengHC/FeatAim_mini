@@ -8,9 +8,15 @@ public class Gun : MonoBehaviour
 	public static Action OnTargetMiss;
     private bool isGameActive = false;
 
-    [SerializeField] Camera cam;
+    [SerializeField] 
+	Camera cam;
+    [SerializeField] 
+	AudioSource audioSource;
+    [SerializeField] 
+	AudioClip hitSound;
 
-	void Update()
+
+    void Update()
 	{
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -34,7 +40,8 @@ public class Gun : MonoBehaviour
 				if(target != null)
 				{
 					target.Hit();
-				}
+                    audioSource.PlayOneShot(hitSound);
+                }
 				else
 				{
 					// OnTargetMiss = null이 아닐때 Invoke()호출 

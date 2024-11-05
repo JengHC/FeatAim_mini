@@ -14,6 +14,13 @@ public class GameStarter : MonoBehaviour
         startMessageText.gameObject.SetActive(true);
     }
 
+    public void ResetGame()
+    {
+        IsGameActive = false; // 게임 시작 여부 초기화
+        startMessageText.gameObject.SetActive(true); // 안내 문구 다시 보이기
+    }
+
+
     void Update()
     {
         if (!IsGameActive && Input.GetKeyDown(KeyCode.F))
