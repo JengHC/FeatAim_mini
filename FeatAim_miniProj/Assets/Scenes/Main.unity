@@ -254,8 +254,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Temusan Aimlab
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4ee32a367576c7248abbdb3a5b5ece7b, type: 2}
-  m_sharedMaterial: {fileID: -3938657998663968955, guid: 4ee32a367576c7248abbdb3a5b5ece7b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4357e4c89d5ff7a4d9b57b7c799a4a3e, type: 2}
+  m_sharedMaterial: {fileID: -4948158817647243719, guid: 4357e4c89d5ff7a4d9b57b7c799a4a3e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -947,10 +947,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GameStart '
+  m_text: 'Start '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4ee32a367576c7248abbdb3a5b5ece7b, type: 2}
-  m_sharedMaterial: {fileID: -3938657998663968955, guid: 4ee32a367576c7248abbdb3a5b5ece7b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4357e4c89d5ff7a4d9b57b7c799a4a3e, type: 2}
+  m_sharedMaterial: {fileID: -4948158817647243719, guid: 4357e4c89d5ff7a4d9b57b7c799a4a3e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
