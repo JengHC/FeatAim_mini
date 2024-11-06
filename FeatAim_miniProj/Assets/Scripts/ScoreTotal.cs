@@ -70,7 +70,6 @@ public class ScoreTotal : MonoBehaviour
         // 다음 공을 맞췄을때 걸린 시간을 새로 계산 하도록, 현재 시간으로 다시 설정
         lastHitTime = Time.time;
 
-        Score++;
         text1.text = $"점수: {Score}";
     }
 

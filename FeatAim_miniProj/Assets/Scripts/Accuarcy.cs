@@ -37,6 +37,10 @@ public class Accuarcy : MonoBehaviour
         {
             isGameActive = true;
         }
+        if (isGameActive)
+        {
+            CalculateAccuracy(); // 게임이 활성화된 상태에서 실시간으로 정확도 계산
+        }
     }
     public void ShowAccuracyPanelText()
     {
